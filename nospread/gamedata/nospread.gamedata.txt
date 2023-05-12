@@ -1,0 +1,65 @@
+"Games"
+{
+	"cstrike"
+	{
+		"Signatures"
+		{
+			"FX_FireBullets"
+			{
+				"library"	"server"
+				"windows"	"\x8B\x44\x24\x04\x81\xEC\x9C\x00\x00\x00"
+				"linux"		"@_Z14FX_FireBulletsiRK6VectorRK6QAngleiiif"
+			}
+		}
+
+		"Offsets"
+		{
+			"CBasePlayer::EyeAngles"
+			{
+				"windows"	"118"
+				"linux"		"119"
+			}
+		}
+
+		"Functions"
+		{
+			"FX_FireBullets"
+			{
+				"signature"	"FX_FireBullets"
+				"callconv"	"cdecl"
+				"return"	"void"
+				"arguments"
+				{
+					"iPlayerIndex"
+					{
+						"type"	"int"
+					}
+					"vOrigin"
+					{
+						"type"	"vectorptr"
+					}
+					"vAngles"
+					{
+						"type"	"objectptr"
+					}
+					"iWeaponID"
+					{
+						"type"	"int"
+					}
+					"iMode"
+					{
+						"type"	"int"
+					}
+					"iSeed"
+					{
+						"type"	"int"
+					}
+					"flSpread"
+					{
+						"type"	"float"
+					}
+				}
+			}
+		}
+	}
+}
