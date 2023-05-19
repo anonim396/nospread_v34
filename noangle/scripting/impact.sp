@@ -1,14 +1,26 @@
 #include <sourcemod>
 #include <sdktools>
 
-new Float:Origin[3];
+#pragma newdecls required
+#pragma semicolon 1
 
-public OnPluginStart()
+public Plugin myinfo = 
+{
+	name = "",
+	author = "",
+	description = "",
+	version = "",
+	url = ""
+};
+
+float Origin[3];
+
+public void OnPluginStart()
 {
 	HookEvent("bullet_impact", ShowImpact);
 }
 
-public void ShowImpact(Event event, const char[] name, bool dontBroadcast)
+public Action ShowImpact(Event event, const char[] name, bool dontBroadcast)
 {
 	Origin[0] = GetEventFloat(event,"x");
 	Origin[1] = GetEventFloat(event,"y");
@@ -17,5 +29,5 @@ public void ShowImpact(Event event, const char[] name, bool dontBroadcast)
 	TE_SetupEnergySplash(Origin,Origin,false);
 	TE_SendToAll();
 	
-	return;
+	return Plugin_Continue;
 }
