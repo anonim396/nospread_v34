@@ -24,7 +24,6 @@ public Action EventWeaponFire(Event event, const char[] name, bool dontBroadcast
 	if(!client)
 		return Plugin_Handled;
 	
-	SetEntProp(client, Prop_Send, "m_iShotsFired", 0);
 	SetEntPropVector(client, Prop_Send, "m_vecPunchAngle", view_as<float>(Angle));
 	SetEntPropVector(client, Prop_Send, "m_vecPunchAngleVel", view_as<float>(Angle));
 	
